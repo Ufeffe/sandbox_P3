@@ -1,0 +1,17 @@
+%center_shadow {
+    margin: 50px auto;
+    border: solid $sd-color 2px;
+    border-radius: 15px;
+}
+
+%ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%flex_sb_100pr100 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test nesting + hover</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="separation">
+        <div class="container">
+            <div class="container_forme">
+                <h1>Retour Ligne</h1>
+                <div class="text1__progress">
+                    <p>Lorem Ipsum is simply dummy text of the printing and typ </p>
+                    <div class="text1__progress__bar"></div>
+                </div>
+            </div>
+            <div class="container_forme">
+                <h1>Ellipsis</h1>
+                <div class="text1__progress">
+                    <p class="text1__progress_texte">Lorem Ipsum is simply dummy text of the printing and typ </p>
+                    <div class="text1__progress__bar">
+
+                    </div>
+                </div>
+            </div>
+            <div class="container_forme">
+                <h1>Ellipsis A travailler</h1>
+                <p>bloque parent need la class text1__progress_texte sinon ca sort</p>
+
+                <div class="text1__progress">
+                    <div class="text1__progress_texte">
+                        <h2>Titre d'ici</h2>
+                        <p class="text1_ellipsis text1__progress_texte">Lorem Ipsum is simply dummy text of the printing and typ </p>
+
+                    </div>
+                    <div class="text1__progress__bar">
+                        <p class="text1__progress__affichage__texte">texte de la progress__bar</p>
+                    </div>
+                </div>
+                <div class="text1__progress">
+                    <div>
+                        <h2>Titre d'ici</h2>
+                        <p class="text1_ellipsis text1__progress_texte">Lorem Ipsum is simply dummy text of the printing and typ </p>
+                    </div>
+                    <div class="text1__progress__bar">
+                        <p class="text1__progress__affichage__texte">texte de la progress__bar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="containerX">
+                <h1>Hover Radius nature</h1>
+                <div class="text2__progress">
+                    <p>Lorem Ipsum is simply dummy tex</p>
+                    <div class="text2__progress__bar"></div>
+                </div>
+            </div>
+            <div class="containerX">
+                <h1>3 box libres</h1>
+                <div class="text2__progress">
+                    <p>Lorem Ipsum is simply dummy tex</p>
+                    <p>50€</p>
+                    <div class="text2__progress__bar"></div>
+                </div>
+            </div>
+            <div class="containerX">
+                <h1>2 box flex (2 formes de hover)</h1>
+                <div class="text2__progress">
+                    <div class="flex">
+                        <div class="flex_col">
+                            <h1>Titre ici</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typ</p>
+                        </div>
+                        <p>50€</p>
+                    </div>
+                    <div class="text2__progress__bar"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="boxing_placement">
+                <h1>Forme de base</h1>
+                <div class="base_vignette">
+                    <div class="vignette">1</div>
+                    <div class="vignette">2</div>
+                    <div class="vignette">3</div>
+                </div>
+            </div>
+            <div class="boxing_placement">
+                <h1>Forme de base</h1>
+                <div class="base_vignette">
+                    <div class="vignette1">1</div>
+                    <div class="vignette2">2</div>
+                    <div class="vignette3">3</div>
+                </div>
+            </div>
+            <div class="boxing_placement">
+                <h1>Ajout texte</h1>
+                <div class="base_vignette">
+                    <div class="vignette1">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        </p>
+                    </div>
+                    <div class="vignette2">2</div>
+                    <div class="vignette3">3</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

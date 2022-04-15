@@ -1,0 +1,17 @@
+//Reset
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+// Couleurs du theme
+$prim-color:#9356DC;
+$sd-color: #FF79DA;
+$ter-color:#99E2D0;
+// Font du theme
+$font-title: 'Shrikhand',
+cursive;
+$font-text:'Roboto',
+sans-serif;
