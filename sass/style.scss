@@ -1,129 +1,164 @@
-@import './_variables.scss';
-@import './mixins.scss';
-@import './_placeholders.scss';
-h1,
-h2,
-p {
-    font-family: $font_text;
-    margin: 5px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin: auto;
-}
-
-.separation {
-    display: flex;
-    margin-top: 50px;
-}
-
-.text1 {
-    &__progress {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        @extend %center_shadow;
-        // @extend %ellipsis;
-        &_texte {
-            @extend %ellipsis;
-        }
-        &__bar {
-            background-color: $ter-color;
-            transform: scaleX(0);
-            transition: 0.3s ease;
-            transform-origin: center right;
-        }
-        &__affichage__texte {
-            display: none;
-        }
-        &:hover &__bar {
-            width: 150px;
-            transform: scaleX(1);
-        }
-        &:hover &__affichage__texte {
-            display: block;
-        }
+    @import './_variables.scss';
+    @import './mixins.scss';
+    @import './_placeholders.scss';
+    h1,
+    h2,
+    p {
+        font-family: $font_text;
+        margin: 5px;
     }
-}
-
-.text2 {
-    &__progress {
-        @extend %flex_sb_100pr100;
-        @extend %center_shadow;
-        @extend %ellipsis;
-        .flex {
-            @extend %flex_sb_100pr100;
-            align-items: flex-end;
-            .flex_col {
-                display: flex;
-                flex-direction: column;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        margin: auto;
+    }
+    
+    .separation {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 50px;
+    }
+    
+    .text1 {
+        &__progress {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            @extend %center_shadow;
+            // @extend %ellipsis;
+            &_texte {
+                @extend %ellipsis;
+            }
+            &__bar {
+                background-color: $ter-color;
+                transform: scaleX(0);
+                transition: 0.3s ease;
+                transform-origin: center right;
+            }
+            &__affichage__texte {
+                display: none;
+            }
+            &:hover &__bar {
+                width: 150px;
+                transform: scaleX(1);
+            }
+            &:hover &__affichage__texte {
+                display: block;
             }
         }
-         :hover {
-            width: 85%;
+    }
+    
+    .text2 {
+        &__progress {
+            @extend %flex_sb_100pr100;
+            @extend %center_shadow;
+            @extend %ellipsis;
+            .flex {
+                @extend %flex_sb_100pr100;
+                align-items: flex-end;
+                .flex_col {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+             :hover {
+                width: 85%;
+            }
+            &:hover &__bar {
+                width: 150px;
+                transform: scaleX(1);
+            }
+            &__bar {
+                background-color: $ter-color;
+                transform: scaleX(0);
+                transition: 0.3s ease;
+                transform-origin: center right;
+            }
         }
-        &:hover &__bar {
+    }
+    
+    .base_vignette {
+        width: 100%;
+        height: 50px;
+        @extend %center_shadow;
+        // @extend %ellipsis;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        &:hover .vignette1 {
+            transform: scaleX(0.9);
+            transform-origin: left;
+        }
+        &:hover .vignette1>p {
+            @extend %ellipsis;
+        }
+        &:hover .vignette2 {
+            transform: scaleX(1);
+            transform-origin: right;
+        }
+        &:hover .vignette3 {
             width: 150px;
             transform: scaleX(1);
         }
-        &__bar {
-            background-color: $ter-color;
+    }
+    
+    .vignette {
+        width: 34%;
+        border: 1px solid red;
+        text-align: center;
+        &1 {
+            width: 500px;
+            background-color: $prim-color;
+            text-align: center;
+            transition: 0.5s ease;
+        }
+        &2 {
+            width: 50px;
+            background-color: $sd-color;
+            text-align: center;
+            transition: 0.5s ease;
+        }
+        &3 {
             transform: scaleX(0);
-            transition: 0.3s ease;
-            transform-origin: center right;
+            background-color: $ter-color;
+            text-align: center;
+            transform-origin: right;
+            transition: 0.5s ease;
         }
     }
-}
-
-.base_vignette {
-    width: 100%;
-    height: 50px;
-    @extend %center_shadow;
-    // @extend %ellipsis;
-    display: flex;
-    justify-content: flex-start;
-    overflow: hidden;
-    &:hover .vignette1 {
-        transform: scaleX(0.9);
-        transform-origin: left;
-    }
-    &:hover .vignette1>p {
-        @extend %ellipsis;
-    }
-    &:hover .vignette2 {
-        transform: scaleX(1);
-        transform-origin: right;
-    }
-    &:hover .vignette3 {
-        width: 150px;
-        transform: scaleX(1);
-    }
-}
-
-.vignette {
-    width: 34%;
-    border: 1px solid red;
-    text-align: center;
-    &1 {
+    
+    .box_corner {
         width: 500px;
-        background-color: $prim-color;
-        text-align: center;
-        transition: 0.5s ease;
+        @extend %center_shadow;
+        display: flex;
+        overflow: hidden;
+        .inner {
+            width: 450px;
+            &_inner_text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &:hover .inner {
+            width: 300px;
+            transition: 1s ease;
+            transform-origin: left;
+        }
+        &:hover .hover_text {
+            transform: scaleX(1);
+        }
     }
-    &2 {
-        width: 50px;
-        background-color: $sd-color;
-        text-align: center;
-        transition: 0.5s ease;
-    }
-    &3 {
-        transform: scaleX(0);
+    
+    .hover_text {
         background-color: $ter-color;
-        text-align: center;
-        transform-origin: right;
+        transform: scaleX(0);
         transition: 0.5s ease;
+        transform-origin: center right;
+        &_text {
+            white-space: nowrap;
+        }
     }
-}

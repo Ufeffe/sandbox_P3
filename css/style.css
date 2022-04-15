@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-.base_vignette, .text2__progress, .text1__progress {
+.box_corner, .base_vignette, .text2__progress, .text1__progress {
   margin: 50px auto;
   border: solid #FF79DA 2px;
   border-radius: 15px;
@@ -39,6 +39,8 @@ p {
 
 .separation {
   display: flex;
+  justify-content: center;
+  margin: auto;
   margin-top: 50px;
 }
 
@@ -128,6 +130,38 @@ p {
   text-align: center;
   transform-origin: right;
   transition: 0.5s ease;
+}
+
+.box_corner {
+  width: 500px;
+  display: flex;
+  overflow: hidden;
+}
+.box_corner .inner {
+  width: 450px;
+}
+.box_corner .inner_inner_text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.box_corner:hover .inner {
+  width: 300px;
+  transition: 1s ease;
+  transform-origin: left;
+}
+.box_corner:hover .hover_text {
+  transform: scaleX(1);
+}
+
+.hover_text {
+  background-color: #99E2D0;
+  transform: scaleX(0);
+  transition: 0.5s ease;
+  transform-origin: center right;
+}
+.hover_text_text {
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */
