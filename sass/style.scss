@@ -132,8 +132,11 @@
     
     .box_corner {
         width: 500px;
+        height: 75px;
         @extend %center_shadow;
         display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
         overflow: hidden;
         .inner {
             width: 450px;
@@ -144,21 +147,61 @@
             }
         }
         &:hover .inner {
-            width: 300px;
-            transition: 1s ease;
+            width: 350px;
+            transition: 0.7s ease-in-out;
             transform-origin: left;
         }
         &:hover .hover_text {
             transform: scaleX(1);
         }
+        &:hover .rotate {
+            transform: rotate(-360deg);
+        }
     }
     
     .hover_text {
+        height: 100%;
         background-color: $ter-color;
         transform: scaleX(0);
-        transition: 0.5s ease;
+        transition: 1s ease;
         transform-origin: center right;
-        &_text {
-            white-space: nowrap;
+    }
+    
+    .hover_icone {
+        width: 100px;
+        margin-top: 20px;
+        &_circle {
+            width: 30px;
+            height: 30px;
+            border: 1px white solid;
+            background-color: white;
+            border-radius: 50%;
+        }
+        &_circle {
+            margin: auto;
+        }
+    }
+    
+    .fa-check {
+        color: $ter-color;
+    }
+    
+    .rotate {
+        transition: 1.2s ease;
+    }
+    
+    .fa-check {
+        position: relative;
+        top: 5px;
+        left: 7px;
+    }
+    
+    .carre_rotation {
+        width: 100px;
+        height: 100px;
+        background-color: $prim-color;
+        transition: 0.5s ease;
+        &:hover {
+            transform: rotate(360deg);
         }
     }

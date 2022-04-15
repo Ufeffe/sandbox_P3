@@ -134,7 +134,10 @@ p {
 
 .box_corner {
   width: 500px;
+  height: 75px;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   overflow: hidden;
 }
 .box_corner .inner {
@@ -146,22 +149,62 @@ p {
   text-overflow: ellipsis;
 }
 .box_corner:hover .inner {
-  width: 300px;
-  transition: 1s ease;
+  width: 350px;
+  transition: 0.7s ease-in-out;
   transform-origin: left;
 }
 .box_corner:hover .hover_text {
   transform: scaleX(1);
 }
+.box_corner:hover .rotate {
+  transform: rotate(-360deg);
+}
 
 .hover_text {
+  height: 100%;
   background-color: #99E2D0;
   transform: scaleX(0);
-  transition: 0.5s ease;
+  transition: 1s ease;
   transform-origin: center right;
 }
-.hover_text_text {
-  white-space: nowrap;
+
+.hover_icone {
+  width: 100px;
+  margin-top: 20px;
+}
+.hover_icone_circle {
+  width: 30px;
+  height: 30px;
+  border: 1px white solid;
+  background-color: white;
+  border-radius: 50%;
+}
+.hover_icone_circle {
+  margin: auto;
+}
+
+.fa-check {
+  color: #99E2D0;
+}
+
+.rotate {
+  transition: 1.2s ease;
+}
+
+.fa-check {
+  position: relative;
+  top: 5px;
+  left: 7px;
+}
+
+.carre_rotation {
+  width: 100px;
+  height: 100px;
+  background-color: #9356DC;
+  transition: 0.5s ease;
+}
+.carre_rotation:hover {
+  transform: rotate(360deg);
 }
 
 /*# sourceMappingURL=style.css.map */
