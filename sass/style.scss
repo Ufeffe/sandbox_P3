@@ -1,207 +1,313 @@
-    @import './_variables.scss';
-    @import './mixins.scss';
-    @import './_placeholders.scss';
-    h1,
-    h2,
-    p {
-        font-family: $font_text;
-        margin: 5px;
-    }
-    
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 500px;
-        margin: auto;
-    }
-    
-    .separation {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-        margin-top: 50px;
-    }
-    
-    .text1 {
-        &__progress {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            @extend %center_shadow;
-            // @extend %ellipsis;
-            &_texte {
-                @extend %ellipsis;
-            }
-            &__bar {
-                background-color: $ter-color;
-                transform: scaleX(0);
-                transition: 0.3s ease;
-                transform-origin: center right;
-            }
-            &__affichage__texte {
-                display: none;
-            }
-            &:hover &__bar {
-                width: 150px;
-                transform: scaleX(1);
-            }
-            &:hover &__affichage__texte {
-                display: block;
-            }
-        }
-    }
-    
-    .text2 {
-        &__progress {
-            @extend %flex_sb_100pr100;
-            @extend %center_shadow;
-            @extend %ellipsis;
-            .flex {
-                @extend %flex_sb_100pr100;
-                align-items: flex-end;
-                .flex_col {
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-             :hover {
-                width: 85%;
-            }
-            &:hover &__bar {
-                width: 150px;
-                transform: scaleX(1);
-            }
-            &__bar {
-                background-color: $ter-color;
-                transform: scaleX(0);
-                transition: 0.3s ease;
-                transform-origin: center right;
-            }
-        }
-    }
-    
-    .base_vignette {
+@import './_variables.scss';
+@import './mixins.scss';
+@import './_placeholders.scss';
+h1,
+h2,
+p {
+    font-family: $font_text;
+    margin: 5px;
+}
+
+.titre_separation {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+}
+
+.separation {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    padding: 30px 0px;
+    border: 1px solid red;
+}
+
+.text1 {
+    &__progress {
         width: 100%;
-        height: 50px;
+        display: flex;
+        justify-content: space-between;
         @extend %center_shadow;
         // @extend %ellipsis;
-        display: flex;
-        justify-content: flex-start;
-        overflow: hidden;
-        &:hover .vignette1 {
-            transform: scaleX(0.9);
-            transform-origin: left;
-        }
-        &:hover .vignette1>p {
+        &_texte {
             @extend %ellipsis;
         }
-        &:hover .vignette2 {
-            transform: scaleX(1);
-            transform-origin: right;
+        &__bar {
+            background-color: $ter-color;
+            transform: scaleX(0);
+            transition: 0.3s ease;
+            transform-origin: center right;
         }
-        &:hover .vignette3 {
+        &__affichage__texte {
+            display: none;
+        }
+        &:hover &__bar {
             width: 150px;
             transform: scaleX(1);
         }
-    }
-    
-    .vignette {
-        width: 34%;
-        border: 1px solid red;
-        text-align: center;
-        &1 {
-            width: 500px;
-            background-color: $prim-color;
-            text-align: center;
-            transition: 0.5s ease;
-        }
-        &2 {
-            width: 50px;
-            background-color: $sd-color;
-            text-align: center;
-            transition: 0.5s ease;
-        }
-        &3 {
-            transform: scaleX(0);
-            background-color: $ter-color;
-            text-align: center;
-            transform-origin: right;
-            transition: 0.5s ease;
+        &:hover &__affichage__texte {
+            display: block;
         }
     }
-    
-    .box_corner {
-        width: 500px;
-        height: 75px;
+}
+
+.text2 {
+    &__progress {
+        @extend %flex_sb_100pr100;
         @extend %center_shadow;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        overflow: hidden;
-        .inner {
-            width: 450px;
-            &_inner_text {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+        @extend %ellipsis;
+        .flex {
+            @extend %flex_sb_100pr100;
+            align-items: flex-end;
+            .flex_col {
+                display: flex;
+                flex-direction: column;
             }
         }
-        &:hover .inner {
-            width: 350px;
-            transition: 0.7s ease-in-out;
-            transform-origin: left;
+         :hover {
+            width: 85%;
         }
-        &:hover .hover_text {
+        &:hover &__bar {
+            width: 150px;
             transform: scaleX(1);
         }
-        &:hover .rotate {
-            transform: rotate(-360deg);
+        &__bar {
+            background-color: $ter-color;
+            transform: scaleX(0);
+            transition: 0.3s ease;
+            transform-origin: center right;
         }
     }
-    
-    .hover_text {
-        height: 100%;
-        background-color: $ter-color;
-        transform: scaleX(0);
-        transition: 1s ease;
-        transform-origin: center right;
+}
+
+.base_vignette {
+    width: 100%;
+    height: 50px;
+    @extend %center_shadow;
+    // @extend %ellipsis;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    &:hover .vignette1 {
+        transform: scaleX(0.9);
+        transform-origin: left;
     }
-    
-    .hover_icone {
-        width: 100px;
-        margin-top: 20px;
-        &_circle {
-            width: 30px;
-            height: 30px;
-            border: 1px white solid;
-            background-color: white;
-            border-radius: 50%;
-        }
-        &_circle {
-            margin: auto;
-        }
+    &:hover .vignette1>p {
+        @extend %ellipsis;
     }
-    
-    .fa-check {
-        color: $ter-color;
+    &:hover .vignette2 {
+        transform: scaleX(1);
+        transform-origin: right;
     }
-    
-    .rotate {
-        transition: 1.2s ease;
+    &:hover .vignette3 {
+        width: 150px;
+        transform: scaleX(1);
     }
-    
-    .fa-check {
-        position: relative;
-        top: 5px;
-        left: 7px;
-    }
-    
-    .carre_rotation {
-        width: 100px;
-        height: 100px;
+}
+
+.vignette {
+    width: 34%;
+    border: 1px solid red;
+    text-align: center;
+    &1 {
+        width: 500px;
         background-color: $prim-color;
+        text-align: center;
         transition: 0.5s ease;
-        &:hover {
-            transform: rotate(360deg);
+    }
+    &2 {
+        width: 50px;
+        background-color: $sd-color;
+        text-align: center;
+        transition: 0.5s ease;
+    }
+    &3 {
+        transform: scaleX(0);
+        background-color: $ter-color;
+        text-align: center;
+        transform-origin: right;
+        transition: 0.5s ease;
+    }
+}
+
+.box_corner,
+.box_corner_fadein {
+    width: 500px;
+    height: 75px;
+    margin: 20px auto;
+    border: solid $sd-color 2px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: hidden;
+    .inner {
+        width: 450px;
+        &_inner_text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
+    &:hover .inner {
+        width: 350px;
+        transition: 0.7s ease-in-out;
+        transform-origin: left;
+    }
+    &:hover .hover_text {
+        transform: scaleX(1);
+    }
+    &:hover .rotate {
+        transform: rotate(-360deg);
+    }
+}
+
+.hover_text {
+    height: 100%;
+    background-color: $ter-color;
+    transform: scaleX(0);
+    transition: 1s ease;
+    transform-origin: center right;
+}
+
+.hover_icone {
+    width: 100px;
+    margin-top: 20px;
+    &_circle {
+        width: 30px;
+        height: 30px;
+        border: 1px white solid;
+        background-color: white;
+        border-radius: 50%;
+    }
+    &_circle {
+        margin: auto;
+    }
+}
+
+.fa-check {
+    color: $ter-color;
+}
+
+.rotate {
+    transition: 1.2s ease;
+}
+
+.fa-check {
+    position: relative;
+    top: 5px;
+    left: 7px;
+}
+
+.carre_rotation {
+    width: 100px;
+    height: 100px;
+    background-color: $prim-color;
+    transition: 0.5s ease;
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
+
+// 
+// fadein
+// 
+.fadein {
+    overflow: hidden;
+}
+
+.fade1 {
+    animation: apparition 0.5s linear;
+}
+
+.fade2 {
+    animation: apparition 0.7s linear;
+}
+
+.fade3 {
+    animation: apparition 0.9s linear;
+}
+
+// 
+// Fin du fadein
+// 
+// 
+//  Debut Loader_spinner
+// 
+.button {
+    @extend %btn_hover_effect;
+}
+
+.loader_spinner {
+    width: 375px;
+    height: 400px;
+    background-color: #f6f6f6;
+}
+
+.spinner_container {
+    margin: auto;
+    transform: scale(2);
+}
+
+.circlespinner1 {
+    width: 60px;
+    height: 60px;
+    border: $prim-color 2px solid;
+    border-radius: 50px;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: $prim-color;
+        top: 0;
+        left: 0;
+        animation: pulse 1.5s infinite ease-out;
+    }
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+.circlespinner2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+    background: $sd-color;
+    border: $sd-color 2px solid;
+    border-radius: 50px;
+}
+
+.loading_i {
+    font-size: 2em;
+    position: relative;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// .circlespinner3 {
+//     position: relative;
+//     top: 3px;
+//     left: 3px;
+//     width: 40px;
+//     height: 40px;
+//     border: $ter-color 2px solid;
+//     border-radius: 50px;
+// }
